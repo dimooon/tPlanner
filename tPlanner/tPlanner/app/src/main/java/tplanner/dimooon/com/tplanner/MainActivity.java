@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
 
@@ -20,6 +21,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Handler;
 
 import tplanner.dimooon.com.tplanner.adapters.MyAdapter;
 import tplanner.dimooon.com.tplanner.database.TPlannerDatabaseOpenHalper;
@@ -40,6 +42,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         createPlayersList();
+
     }
 
     private void createPlayersList(){
