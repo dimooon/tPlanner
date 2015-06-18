@@ -1,0 +1,333 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/add_player_main">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/small_padding"
+            android:paddingRight="@dimen/small_padding"
+            android:paddingTop="@dimen/small_padding"
+            android:paddingBottom="@dimen/small_padding"
+            android:background="@color/holo_yellow_dark"
+            android:orientation="vertical"
+
+            tools:context="tplanner.dimooon.com.tplanner.AddPlayerActivity"
+            android:layout_width="match_parent">
+
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="120dip"
+                android:scaleType="centerInside"
+                android:src="@drawable/placeholder_image"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <RatingBar
+                android:id="@+id/player_talent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:max="100"
+                android:numStars="5"
+                android:stepSize="10.0"
+                android:rating="20.0"/>
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:background="@color/holo_red_dark"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="5dip"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/add_player_name"
+                        android:hint="@string/add_player_name_hint"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dip"
+                        android:background="@color/holo_red_dark"
+                        android:layout_marginTop="5dip"
+                        android:layout_marginBottom="5dip"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/add_player_height_title"/>
+
+                            <NumberPicker
+                                android:id="@+id/height_picker"
+                                android:layout_width="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:overScrollMode="always"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/add_player_weight_title"/>
+                            <NumberPicker
+                                android:id="@+id/weight_picker"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_height="wrap_content" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="2dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/holo_red_dark"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/skill_outside_hitter"
+                            android:lines="3"/>
+                        <NumberPicker
+                            android:id="@+id/skill_outside_hitter"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="2dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/holo_red_dark"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/skill_right_side_hitter"
+                            android:lines="3"/>
+                        <NumberPicker
+                            android:id="@+id/skill_right_side_hitter"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="2dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/holo_red_dark"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/skill_opposite_hitter"
+                            android:lines="3"/>
+                        <NumberPicker
+                            android:id="@+id/skill_opposite_hitter"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="2dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/holo_red_dark"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/skill_middle_blocker"
+                            android:lines="3"/>
+                        <NumberPicker
+                            android:id="@+id/skill_middle_blocker"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="2dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/holo_red_dark"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/skill_libero"
+                            android:lines="3"/>
+                        <NumberPicker
+                            android:id="@+id/skill_libero"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="2dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/holo_red_dark"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/skill_defensive_specialist"
+                            android:lines="3"/>
+                        <NumberPicker
+                            android:id="@+id/skill_defensive_specialist"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="2dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/holo_red_dark"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/skill_setter"
+                            android:lines="3"/>
+                        <NumberPicker
+                            android:id="@+id/skill_setter"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="2dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/holo_red_dark"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"/>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/comment"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_player_button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:fab_colorNormal="@color/pocket_color_1"
+        fab:fab_icon="@drawable/done"
+        fab:fab_colorPressed="@color/pocket_color_2"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

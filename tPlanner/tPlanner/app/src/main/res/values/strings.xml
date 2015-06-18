@@ -5,4 +5,15 @@
     <string name="action_settings">Settings</string>
     <string name="players_list">Players list</string>
     <string name="title_activity_lunch">LunchActivity</string>
+    <string name="title_activity_add_player">AddPlayerActivity</string>
+    <string name="add_player_name_hint">Name</string>
+    <string name="add_player_height_title">Height</string>
+    <string name="add_player_weight_title">Weight</string>
+    <string name="skill_outside_hitter">Outside hitter</string>
+    <string name="skill_right_side_hitter">Right side hitter</string>
+    <string name="skill_opposite_hitter">Opposite Hitter</string>
+    <string name="skill_middle_blocker">Middle Blocker</string>
+    <string name="skill_libero">Libero</string>
+    <string name="skill_defensive_specialist">Defensive Specialist</string>
+    <string name="skill_setter">Setter</string>
 </resources>

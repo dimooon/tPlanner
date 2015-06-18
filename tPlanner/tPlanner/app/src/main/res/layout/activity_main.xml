@@ -35,15 +35,12 @@
 
 
     <com.getbase.floatingactionbutton.FloatingActionButton
-        android:id="@+id/pink_icon"
+        android:id="@+id/add_player_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         fab:fab_colorNormal="@color/pocket_color_1"
         fab:fab_icon="@drawable/plus_orange"
         fab:fab_colorPressed="@color/pocket_color_2"
-        android:align_parentRight = "true"
-        android:layout_alignBottom="@+id/my_recycler_view"
-        android:layout_alignRight="@+id/my_recycler_view"
-        android:layout_alignEnd="@+id/my_recycler_view" />
+        android:layout_alignBottom="@+id/my_recycler_view" />
 
 </RelativeLayout>

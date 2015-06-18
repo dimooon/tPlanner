@@ -1,6 +1,7 @@
 package tplanner.dimooon.com.tplanner;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,6 +27,8 @@ import java.util.logging.Handler;
 import tplanner.dimooon.com.tplanner.adapters.MyAdapter;
 import tplanner.dimooon.com.tplanner.database.TPlannerDatabaseOpenHalper;
 import tplanner.dimooon.com.tplanner.team.Player;
+import tplanner.dimooon.com.tplanner.team.PositionSkill;
+import tplanner.dimooon.com.tplanner.team.PositionType;
 
 
 public class MainActivity extends Activity {
@@ -40,9 +43,25 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         createPlayersList();
+        initAddPlayerButton();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        mAdapter = new MyAdapter(getPlayersFromDatabase());
+        mRecyclerView.setAdapter(mAdapter);
+    }
+
+    private void initAddPlayerButton() {
+        findViewById(R.id.add_player_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,AddPlayerActivity.class));
+            }
+        });
     }
 
     private void createPlayersList(){
@@ -53,19 +72,23 @@ public class MainActivity extends Activity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new MyAdapter(getPlayersFromDatabase());
-        mRecyclerView.setAdapter(mAdapter);
     }
 
     private List<Player> getPlayersFromDatabase(){
-        TPlannerDatabaseOpenHalper playerOpenDatabaseHelper = OpenHelperManager.getHelper(this, TPlannerDatabaseOpenHalper.class);
+        TPlannerDatabaseOpenHalper tPlannerOpenDatabaseHelper = OpenHelperManager.getHelper(this, TPlannerDatabaseOpenHalper.class);
+        Dao<Player, Long> playersDao = null;
+        Dao<PositionSkill, Long> skillsDao = null;
+        ArrayList<Player> players = new ArrayList<>();
 
-        Dao<Player, Long> todoDao = null;
         try {
-            todoDao = playerOpenDatabaseHelper.getDao();
+            playersDao = tPlannerOpenDatabaseHelper.getPlayresDao();
+            skillsDao = tPlannerOpenDatabaseHelper.getSkillsDao();
+            players.addAll(playersDao.queryForAll());
+            for(Player player : players){
+                player.setSkills(skillsDao.queryBuilder().where().eq("playerId",player.getId()).query());
 
-            return todoDao.queryForAll();
-
+            }
+            return players;
         } catch (SQLException e) {
             e.printStackTrace();
         }
